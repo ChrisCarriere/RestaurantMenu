@@ -1,9 +1,16 @@
 package restaurant;
 
 public class MenuItem {
-    Integer price;
-    String description;
-    String category;
+    private Integer price;
+    private String description;
+    private String category;
+
+
+    public MenuItem(Integer price, String description, String category){
+        this.price = price;
+        this.description = description;
+        this.category = category;
+    }
 
     public Integer getPrice() {
         return price;

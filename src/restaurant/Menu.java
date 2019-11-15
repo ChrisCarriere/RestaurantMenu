@@ -6,6 +6,11 @@ public class Menu {
     Boolean isNew;
     Date lastUpdate;
 
+    public Menu(Boolean isNew, Date lastUpdate) {
+        this.isNew = isNew;
+        this.lastUpdate = lastUpdate;
+    }
+
     public Boolean getNew() {
         return isNew;
     }
