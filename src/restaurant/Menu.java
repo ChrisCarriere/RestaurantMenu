@@ -2,28 +2,24 @@ package restaurant;
 
 import java.util.Date;
 
+import java.util.ArrayList;
+
 public class Menu {
-    Boolean isNew;
-    Date lastUpdate;
 
-    public Menu(Boolean isNew, Date lastUpdate) {
-        this.isNew = isNew;
-        this.lastUpdate = lastUpdate;
+    private ArrayList<MenuItem> menuItems;
+
+    public ArrayList<MenuItem> getMenuItems() {
+        return menuItems;
     }
 
-    public Boolean getNew() {
-        return isNew;
+    public void setMenuItems(ArrayList<MenuItem> menuItems) {
+        this.menuItems = menuItems;
     }
 
-    public void setNew(Boolean aNew) {
-        isNew = aNew;
-    }
-
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "menuItems=" + menuItems +
+                '}';
     }
 }
