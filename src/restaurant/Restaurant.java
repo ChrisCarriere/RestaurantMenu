@@ -11,16 +11,13 @@ public class Restaurant {
 
         ArrayList<MenuItem> menuItems = new ArrayList<>();
 
-        MenuItem menuItem1 = new MenuItem(1, "Fish Tacos", "Tacos with fish", "Entree", 7.99, new Date());
-        menuItems.add(menuItem1);
+        menu.addItem(new MenuItem(1, "Fish Tacos", "Tacos with fish", "Entree", 7.99, new Date()));
+        menu.addItem(new MenuItem(2, "Chicken Tacos", "Tacos with grilled chicken", "Entree", 3.99, new Date()));
+        menu.addItem(new MenuItem(3, "Steak Tacos", "Tacos with steak", "Entree", 8.99, new Date()));
+        menu.printMenu();
 
-        MenuItem menuItem2 = new MenuItem(2, "Chicken Tacos", "Tacos with grilled chicken", "Entree", 3.99, new Date());
-        menuItems.add(menuItem2);
+        menu.addItem(new MenuItem(3, "Steak Tacos", "Tacos with steak", "Entree", 8.99, new Date()));
 
-        MenuItem menuItem3 = new MenuItem(3, "Steak Tacos", "Tacos with steak", "Entree", 8.99, new Date());
-        menuItems.add(menuItem3);
-
-        menu.setMenuItems(menuItems);
 
         menu.printMenu();
 

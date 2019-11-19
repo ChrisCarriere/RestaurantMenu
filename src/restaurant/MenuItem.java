@@ -1,6 +1,7 @@
 package restaurant;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class MenuItem {
 
@@ -10,6 +11,7 @@ public class MenuItem {
     private String category;
     private Double price;
     private Date lastUpdateDate;
+    private static final String MENU_NAME = "Chris's Taco Shop";
 
     public MenuItem(Integer id, String name, String description, String category, Double price, Date lastUpdateDate) {
         this.id = id;
@@ -18,6 +20,9 @@ public class MenuItem {
         this.category = category;
         this.price = price;
         this.lastUpdateDate = lastUpdateDate;
+    }
+    public static String getMenuName() {
+        return MENU_NAME;
     }
 
     public Integer getId() { return id; }
@@ -30,9 +35,7 @@ public class MenuItem {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     public String getDescription() {
         return description;
@@ -75,5 +78,20 @@ public class MenuItem {
                 ", price=" + price +
                 ", lastUpdateDate=" + lastUpdateDate +
                 "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MenuItem)) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Objects.equals(getId(), menuItem.getId()) &&
+                Objects.equals(getName(), menuItem.getName()) &&
+                Objects.equals(getDescription(), menuItem.getDescription());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getDescription());
     }
 }
